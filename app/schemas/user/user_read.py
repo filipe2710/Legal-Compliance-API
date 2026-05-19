@@ -1,5 +1,6 @@
-from pydantic import BaseModel, ConfigDict, list
+from pydantic import BaseModel, ConfigDict
 from datetime import date
+from typing import List
 
 class UserRead(BaseModel):
     model_config = ConfigDict(extra='forbid')
@@ -13,7 +14,7 @@ class UserRead(BaseModel):
     date_of_birth: date
     city: str
     created_at: date
-    updated_at: list[date] | None = None
+    updated_at: List[date] | None = None
     
     model_config = ConfigDict(
         extra='forbid',
